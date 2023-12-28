@@ -1,6 +1,10 @@
+* {
+    box-sizing: border-box;
+}
+
 .container {
     display: grid;
-    grid-template: 1fr 5fr / 1fr 4fr;
+    grid-template: 1fr 4fr / 1fr 4fr;
     height: 100vh;
 }
 
@@ -30,35 +34,98 @@
     gap: 1rem;
 }
 
+
+
+
+.header {
+    display: grid;
+    grid-template: 1fr 3fr / 2fr 1fr;
+    gap: 1rem 0.25rem;
+}
+
+
+.header > * {
+    display: flex;
+    align-items: center;
+}
+
+form {
+    gap: 0.5rem;
+    border-radius: 1rem;
+}
+
+button,
+input {
+    background-color: lightgray;
+    border: 0;
+    border-radius: 10px;
+}
+
+input {
+    width: 100%;
+}
+
+.commands {
+    justify-content: space-around;
+    gap: 1.5rem;
+}
+
+.settings {
+    justify-content: flex-end;
+    white-space: nowrap;
+    gap: 0.5rem;
+}
+
+.commands > li {
+    background-color: skyblue;
+    color: white;
+    border-radius: 10px;
+    padding: 0.25rem 1rem;
+}
+
+.hello {
+    display: grid;
+    grid-template-columns: 1fr 10fr;
+    grid-template-rows: 1fr 1fr;
+    gap: 0rem 1em;
+}
+
+.userpic {
+    grid-row: 1 / 3;
+}
+
+.name {
+    grid-column: 2 /3;
+}
+
+
+
 .main {
     background-color: lightgray;
     display: grid;
-    grid-template-columns: 5fr 1fr;
+    grid-template-columns: 3fr 1fr;
+    gap: 1rem;
 }
 
 .news-container div {
     padding: 0;
     justify-items: start;
-    align-items: center;
+}
+
+.cards-container {
+    display: grid;
+    gap: 1rem;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
 }
 
 .card {
     background-color: white;
+    height: 100px;
+    display: grid;
+    justify-content: center;
+    align-content: center;
+    padding: 1rem;
+    border-left: orange 6px solid;
+    border-radius: 5px;
 }
 
-form, .hello {
-    display: flex;
-    justify-content: space-evenly;
-}
-
-.hello ul {
-    display: flex;
-}
-
-.hello ul li {
-    background-color: blue;
-}
-
-.username-greeting {
-    margin-right: auto;
-}
