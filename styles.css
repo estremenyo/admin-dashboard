@@ -103,7 +103,12 @@ input {
 .main {
     background-color: lightgray;
     display: grid;
-    grid-template-columns: 3fr 1fr;
+    grid-template-columns: 4fr 1fr;
+    grid-template-rows: 1fr;
+    gap: 1rem;
+}
+
+.projects {
     gap: 1rem;
 }
 
@@ -114,13 +119,18 @@ input {
 
 .cards-container {
     display: grid;
-    gap: 1rem;
+    gap: 1rem;  
     grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    grid-template-rows: 1rem;
+    grid-row: 1 / -1;
+    align-content: start;
+
 }
+
 
 .card {
     background-color: white;
-    height: 100px;
+    height: 200px;
     display: grid;
     justify-content: center;
     align-content: center;
@@ -129,3 +139,28 @@ input {
     border-radius: 5px;
 }
 
+
+.main-subsection-header {
+    grid-column: 1 / -1;
+}
+
+.main-sidebar-container {
+    display: grid;
+    gap: 1rem;
+    grid-template-rows: auto auto;
+    align-content: start;
+}
+
+.announcements-container,
+.trending-container {
+    display: grid;
+    gap: 1rem;
+}
+
+.trending,
+.announcements {
+    background-color: white;
+    display: grid;
+    padding: 1rem;
+    gap: 1rem;
+}
