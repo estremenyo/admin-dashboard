@@ -13,6 +13,10 @@
     display: grid;
 }
 
+.container > .main {
+    padding-top: 1.5rem;
+}
+
 .sidebar {
     background-color: skyblue;
     color: white;
@@ -41,8 +45,19 @@
     display: grid;
     grid-template: 1fr 3fr / 2fr 1fr;
     gap: 1rem 0.25rem;
+    z-index: 100;
+    box-shadow: 0px 4px 6px -6px black;
+    font-family: sans-serif;
 }
 
+.header > *:not(:last-child) {
+    font-weight: bold;
+}
+
+#header {
+    padding-left: 2rem;
+    padding-bottom: 0rem;
+}
 
 .header > * {
     display: flex;
@@ -59,6 +74,7 @@ input {
     background-color: lightgray;
     border: 0;
     border-radius: 10px;
+    font-size: 1rem;
 }
 
 input {
@@ -73,29 +89,31 @@ input {
 .settings {
     justify-content: flex-end;
     white-space: nowrap;
-    gap: 0.5rem;
+    gap: 1rem;
 }
 
 .commands > li {
     background-color: skyblue;
     color: white;
-    border-radius: 10px;
-    padding: 0.25rem 1rem;
+    border-radius: 15px;
+    padding: 0.5rem 1.5rem;
 }
 
 .hello {
     display: grid;
     grid-template-columns: 1fr 10fr;
     grid-template-rows: 1fr 1fr;
-    gap: 0rem 1em;
+    gap: 0.5rem 1rem;
 }
 
-.userpic {
-    grid-row: 1 / 3;
+.greeting {
+    align-self: end;
+    font-size: 0.8rem;
 }
 
 .name {
     grid-column: 2 /3;
+    align-self: start;
 }
 
 
@@ -103,7 +121,7 @@ input {
 .main {
     background-color: lightgray;
     display: grid;
-    grid-template-columns: 4fr 1fr;
+    grid-template-columns: 3fr 1fr;
     grid-template-rows: 1fr;
     gap: 1rem;
 }
@@ -120,11 +138,8 @@ input {
 .cards-container {
     display: grid;
     gap: 1rem;  
-    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-    grid-template-rows: 1rem;
-    grid-row: 1 / -1;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
     align-content: start;
-
 }
 
 
@@ -135,10 +150,27 @@ input {
     justify-content: center;
     align-content: center;
     padding: 1rem;
-    border-left: orange 6px solid;
-    border-radius: 5px;
+    padding-top: 0;
+    border-left: orange 7px solid;
+    border-radius: 7px;
+    grid-template-columns: 1fr;
+    grid-template-rows: 1.5fr 4fr 1fr;
 }
 
+.card-header {
+    align-self: end;
+    font-weight: bold;
+}
+
+.card-list {
+    display: flex;
+    justify-content: flex-end;
+    gap: 0.5rem;
+}
+
+.card-list img {
+    height: 100%;
+}
 
 .main-subsection-header {
     grid-column: 1 / -1;
@@ -146,7 +178,7 @@ input {
 
 .main-sidebar-container {
     display: grid;
-    gap: 1rem;
+    gap: 2rem;
     grid-template-rows: auto auto;
     align-content: start;
 }
@@ -155,12 +187,45 @@ input {
 .trending-container {
     display: grid;
     gap: 1rem;
+
+
 }
 
 .trending,
 .announcements {
     background-color: white;
     display: grid;
-    padding: 1rem;
-    gap: 1rem;
+    padding: 3rem 1rem;
+    gap: 1.5rem;
+    grid-template-rows: repeat(3, 1fr);
+    align-items: end;
+}
+
+.announcement-header {
+    font-size: 0.8rem;
+    font-weight: bold;
+}
+
+.announcement-body {
+    font-size: 0.6rem;
+}
+
+
+input[type="image"] {
+    width: 1rem;
+    height: 1rem;
+    background: white;
+}
+
+.notifications,
+.profile.small-profile {
+    width: 1.5rem;
+    height: 1.5rem;
+}
+
+.profile.large-profile {
+    justify-self: center;
+    align-self: center;
+    grid-row: 1 / -1;
+    width: 3rem;
 }
